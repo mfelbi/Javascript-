@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Console</title>
+  </head>
+  <body>
+    <p>Aplikasi Pemesanan Ticket Kereta Api</p>
+    <script>
+      // Validasi Input Nama Penumpang
+function ValidatePassengerName(name, password) { 
+    return (name === 'admin' && password === 'admin') ? true : false;
+}
+console.log(ValidatePassengerName('admin', 'admin')); 
+console.log(ValidatePassengerName('user', 'password'));
+
+// Menghitung total harga tiket
+function calculateTotalPriceT(priceTicket, numberTicket) {
+    return priceTicket * numberTicket;
+}
+
+// Mengonversi Waktu Ke AM/PM
+function convertToAmPm(time24) {
+    let hours = parseInt(time24.substring(0, 2));
+    let minutes = time24.substring(3);
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12;
+    return `${hours}:${minutes} ${ampm}`;
+}
+
+// Memeriksa ketersediaan kursi
+function checkSeat(requestedSeats, availableSeats) {
+    return requestedSeats <= availableSeats ? true : false;
+}
+
+// Menampilkan detail pesanan
+function displayOrderDetails(trainName, departureTime, departureStation, arrivalStation, numberOfTickets, totalPrice) {
+    console.log("Detail Pesanan Tiket:");
+    console.log(`Nama Kereta: ${trainName}`);
+    console.log(`Waktu Keberangkatan: ${departureTime}`);
+    console.log(`Stasiun Keberangkatan: ${departureStation}`);
+    console.log(`Stasiun Kedatangan: ${arrivalStation}`);
+    console.log(`Jumlah Tiket: ${numberOfTickets}`);
+    console.log(`Total Harga: ${totalPrice}`);
+}
+
+// Memanggil fungsi-fungsi
+let trainName = "Kereta Api KAI Indonesia";
+let departureTime = "08:00";
+let departureStation = "Karawang";
+let arrivalStation = "Jogja";
+let numberOfTickets = 2;
+let pricePerTicket = 100000;
+let totalPrice = calculateTotalPriceT(pricePerTicket, numberOfTickets);
+let availableSeats = 50;
+
+console.log(ValidatePassengerName('admin', 'admin'));
+console.log(ValidatePassengerName('user', 'password'));
+console.log(calculateTotalPriceT(pricePerTicket, numberOfTickets));
+console.log(convertToAmPm(departureTime));
+console.log(checkSeat(numberOfTickets, availableSeats));
+displayOrderDetails(trainName, convertToAmPm(departureTime), departureStation, arrivalStation, numberOfTickets, totalPrice);
+
+    </script>
+  </body>
+</html>
