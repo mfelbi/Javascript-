@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pemesanan Tiket Kereta Api</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="menu-container">
+      <a class="active" href="#home">Home</a>
+      <a href="about.html">About</a>
+      <a href="login.html">Login</a>
+      <h1>Daftar Nama Kereta Api</h1>
+    </div>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Cari Data" />
+      <button onclick="searchTrain()">Cari</button>
+    </div>
+    <table id="TrainTable">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Nama Kereta</th>
+          <th>Keberangkatan</th>
+          <th>Tujuan</th>
+          <th>Harga Tiket</th>
+          <th>Jam keberangkatan</th>
+        </tr>
+      </thead>
+      <tbody id="trainName"></tbody>
+    </table>
+    <button onclick="pesanTiket()">Pesan Tiket</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
